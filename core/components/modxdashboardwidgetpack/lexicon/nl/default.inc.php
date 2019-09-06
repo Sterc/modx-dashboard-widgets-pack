@@ -11,9 +11,9 @@ $_lang['modxdashboardwidgetpack.widget.welcome_desc']   = 'Toont een widget met 
 $_lang['modxdashboardwidgetpack.widget.shortcuts']      = 'Snelkoppelingen';
 $_lang['modxdashboardwidgetpack.widget.shortcuts_desc'] = 'Toont een lijst van handige MODX snelkoppelingen.';
 
-$_lang['mdwp.welcome.welcome_morning']   = 'Good morning, [[+name]]!';
-$_lang['mdwp.welcome.welcome_afternoon'] = 'Good afternoon, [[+name]]!';
-$_lang['mdwp.welcome.welcome_evening']   = 'Good evening, [[+name]]!';
+$_lang['mdwp.welcome.welcome_morning']   = 'Goedemorgen, [[+name]]!';
+$_lang['mdwp.welcome.welcome_afternoon'] = 'Goedemiddag, [[+name]]!';
+$_lang['mdwp.welcome.welcome_evening']   = 'Goedenavond, [[+name]]!';
 
 $_lang['mdwp.shortcuts.intro']            = 'Een lijst met enkele handige MODX-snelkoppelingen die je kunt gebruiken om je workflow te versnellen.';
 $_lang['mdwp.shortcuts.description']      = 'Omschrijving';
