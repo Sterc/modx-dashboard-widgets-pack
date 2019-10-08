@@ -80,12 +80,13 @@ class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
                     '[[++manager_path]]',
                     '[[++assets_path]]',
                     '[[++manager_theme]]',
-                ], [
-                    $this->modx->getOption('base_path',null,MODX_BASE_PATH),
-                    $this->modx->getOption('core_path',null,MODX_CORE_PATH),
-                    $this->modx->getOption('manager_path',null,MODX_MANAGER_PATH),
-                    $this->modx->getOption('assets_path',null,MODX_ASSETS_PATH),
-                    $this->modx->getOption('manager_theme',null,'default'),
+                ],
+                [
+                    $this->modx->getOption('base_path', null, MODX_BASE_PATH),
+                    $this->modx->getOption('core_path', null, MODX_CORE_PATH),
+                    $this->modx->getOption('manager_path', null, MODX_MANAGER_PATH),
+                    $this->modx->getOption('assets_path', null, MODX_ASSETS_PATH),
+                    $this->modx->getOption('manager_theme', null, 'default'),
                 ],
                 $properties['background_image_path']
             );
@@ -106,7 +107,7 @@ class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
         $timeOfDay = 'evening';
         if ($hour > 6 && $hour <= 11) {
             $timeOfDay = 'morning';
-        } else if($hour > 11 && $hour <= 16) {
+        } else if ($hour > 11 && $hour <= 16) {
             $timeOfDay = 'afternoon';
         }
 
