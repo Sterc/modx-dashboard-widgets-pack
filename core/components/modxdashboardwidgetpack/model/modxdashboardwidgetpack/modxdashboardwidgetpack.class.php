@@ -47,13 +47,13 @@ class MODXDashboardWidgetPack
         $corePath = $this->modx->getOption(
             'modxdashboardwidgetpack.core_path',
             $config,
-            $this->modx->getOption('core_path')   . 'components/modxdashboardwidgetpack/'
+            $this->modx->getOption('core_path') . 'components/modxdashboardwidgetpack/'
         );
 
         $assetsUrl = $this->modx->getOption(
             'modxdashboardwidgetpack.assets_url',
             $config,
-            $this->modx->getOption('assets_url')  . 'components/modxdashboardwidgetpack/'
+            $this->modx->getOption('assets_url') . 'components/modxdashboardwidgetpack/'
         );
 
         $assetsPath = $this->modx->getOption(
