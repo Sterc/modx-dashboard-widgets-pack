@@ -3,17 +3,10 @@
   "lowCaseName": "modxdashboardwidgetpack",
   "description": "",
   "author": "Sterc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "package":{
     "elements": {
-      "plugins": [{
-        "name": "MODXDashboardWidgetPack",
-        "description": "",
-        "file": "modxdashboardwidgetpack.plugin.php",
-        "events": [
-          "OnDocFormRender"
-        ]
-      }],
+      "plugins": [],
       "snippets": [],
       "chunks": [],
       "templates": [],

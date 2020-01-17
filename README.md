@@ -1,5 +1,5 @@
 # MODXDashboardWidgetPack #
-![MODXDashboardWidgetPack](https://img.shields.io/badge/version-1.0.0-brightgreen.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/extra%20by-sterc-ff69b4.svg)
+![MODXDashboardWidgetPack](https://img.shields.io/badge/version-1.0.1-brightgreen.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/extra%20by-sterc-ff69b4.svg)
 
 *Note:* This extra currently only works with the Sterc MODX 3 version which can be found here: https://github.com/Sterc/revolution.
 
