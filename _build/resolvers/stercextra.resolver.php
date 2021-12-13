@@ -1,16 +1,19 @@
 <?php
+
+use MODX\Revolution\Transport\modTransportPackage;
+
 $package = 'MODXDashboardWidgetPack';
 $url     = 'https://extras.sterc.nl/api/v1/packagedata';
 $params  = array();
 
 $modx =& $object->xpdo;
-$c = $modx->newQuery('transport.modTransportPackage');
+$c = $modx->newQuery(modTransportPackage::class);
 $c->where(
     array(
         'workspace' => 1,
         "(SELECT
             `signature`
-            FROM {$modx->getTableName('modTransportPackage')} AS `latestPackage`
+            FROM {$modx->getTableName(modTransportPackage::class)} AS `latestPackage`
             WHERE `latestPackage`.`package_name` = `modTransportPackage`.`package_name`
             ORDER BY
                 `latestPackage`.`version_major` DESC,
@@ -32,7 +35,7 @@ $c->where(
 $c->limit(1);
 
 /** @var modTransportPackage $oldPackage */
-$oldPackage = $modx->getObject('transport.modTransportPackage', $c);
+$oldPackage = $modx->getObject(modTransportPackage::class, $c);
 
 $oldVersion = '';
 if ($oldPackage) {

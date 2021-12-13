@@ -1,5 +1,8 @@
 <?php
 
+use  MODX\Revolution\modDashboardWidgetInterface;
+use  MODX\Revolution\modDashboardWidget;
+
 /**
  * @package modx
  * @subpackage dashboard

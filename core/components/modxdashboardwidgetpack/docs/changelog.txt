@@ -1,5 +1,9 @@
 Changelog for MODXDashboardWidgetPack.
 
+MODXDashboardWidgetPack 2.0.0
+==============
+- MODX 3 compatibility
+
 MODXDashboardWidgetPack 1.0.1
 ==============
 - Removed unused plugin
