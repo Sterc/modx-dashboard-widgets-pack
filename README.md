@@ -1,9 +1,7 @@
 # MODXDashboardWidgetPack #
-![MODXDashboardWidgetPack](https://img.shields.io/badge/version-1.0.1-brightgreen.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/extra%20by-sterc-ff69b4.svg)
+![MODXDashboardWidgetPack](https://img.shields.io/badge/version-2.0.1-brightgreen.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/extra%20by-sterc-ff69b4.svg)
 
-*Note:* This extra currently only works with the Sterc MODX 3 version which can be found here: https://github.com/Sterc/revolution.
-
-This extra provides additional dashboard widgets for you to use in your MODX Dashboard to improve the MODX user experience.  
+This extra provides additional dashboard widgets for you to use in your MODX Dashboard to improve the MODX user experience.
 
 ## Welcome widget ##
 To override the default background image you can set the `background_image_path` property when editing the welcome widget.
