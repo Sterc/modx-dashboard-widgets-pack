@@ -1,4 +1,6 @@
 <?php
+use xPDO\Transport\xPDOTransport;
+use MODX\Revolution\modSystemSetting;
 /**
  * MODXDashboardWidgetPack setup options
  *
@@ -7,26 +9,23 @@
  */
 $package = 'MODXDashboardWidgetPack';
 
-$settings = array(
-    array(
-        'key' => 'user_name',
+$settings = [
+    [
+        'key'   => 'user_name',
         'value' => '',
-        'name' => 'Name'
-    ),
-    array(
-        'key' => 'user_email',
+        'name'  => 'Name'
+    ],
+    [
+        'key'   => 'user_email',
         'value' => '',
-        'name' => 'Email address'
-    ),
-);
+        'name'  => 'Email address'
+    ]
+];
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
     case xPDOTransport::ACTION_UPGRADE:
         foreach ($settings as $key => $setting) {
-            $settingObject = $modx->getObject(
-                'modSystemSetting',
-                array('key' => strtolower($package) . '.' . $setting['key'])
-            );
+            $settingObject = $modx->getObject(modSystemSetting::class, ['key' => strtolower($package) . '.' . $setting['key']]);
             if ($settingObject) {
                 $settings[$key]['value'] = $settingObject->get('value');
             }

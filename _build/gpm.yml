@@ -1,0 +1,32 @@
+name: MODXDashboardWidgetPack
+lowCaseName: modxdashboardwidgetpack
+description: This extra provides additional dashboard widgets for you to use in your MODX Dashboard to improve the MODX user experience.
+author: Sterc
+namespace: Sterc\MODXDashboardWidgetPack
+version: 2.0.2
+
+systemSettings:
+  - key: user_name
+    type: textfield
+    area: general
+    value:
+  - key: user_email
+    type": textfield
+    area": general
+    value:
+
+widgets:
+  - name: modxdashboardwidgetpack.widget.welcome
+    description: modxdashboardwidgetpack.widget.welcome_desc
+    type: file
+    content: "../../src/Widgets/Welcome.php"
+    size: half
+  - name: modxdashboardwidgetpack.widget.shortcuts
+    description: modxdashboardwidgetpack.widget.shortcuts_desc
+    type: file
+    content: "../../src/Widgets/Shortcuts.php"
+    size: half
+
+build:
+  setupOptions: "setup.options.php"
+  scriptsAfter: ["setupoptions.resolver.php", "stercextra.resolver.php"]

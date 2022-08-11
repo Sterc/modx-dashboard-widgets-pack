@@ -1,13 +1,16 @@
 <?php
+namespace Sterc\MODXDashboardWidgetPack\Widgets;
 
-use  MODX\Revolution\modDashboardWidgetInterface;
-use  MODX\Revolution\modDashboardWidget;
+use MODX\Revolution\modDashboardWidgetInterface;
+use MODX\Revolution\modDashboardWidget;
+use MODX\Revolution\modManagerController;
+use Sterc\MODXDashboardWidgetPack\MODXDashboardWidgetPack;
 
 /**
  * @package modx
  * @subpackage dashboard
  */
-class ModxDashboardWidgetPackWidgetShortcuts extends modDashboardWidgetInterface
+class Shortcuts extends modDashboardWidgetInterface
 {
     /**
      * An array containing all possible shortcuts.
@@ -43,6 +46,11 @@ class ModxDashboardWidgetPackWidgetShortcuts extends modDashboardWidgetInterface
     ];
 
     /**
+     * @var MODXDashboardWidgetPack
+     */
+    protected $modxdashboardwidgetpack;
+
+    /**
      * ModxDashboardWidgetPackWidgetWelcome constructor.
      * @param \xPDO\xPDO $modx
      * @param modDashboardWidget $widget
@@ -51,6 +59,8 @@ class ModxDashboardWidgetPackWidgetShortcuts extends modDashboardWidgetInterface
     public function __construct(\xPDO\xPDO &$modx, modDashboardWidget &$widget, modManagerController &$controller)
     {
         parent::__construct($modx, $widget, $controller);
+
+        $this->modxdashboardwidgetpack = new MODXDashboardWidgetPack($this->modx);
     }
 
     /**
@@ -76,12 +86,11 @@ class ModxDashboardWidgetPackWidgetShortcuts extends modDashboardWidgetInterface
             ];
         }
 
-        $this->modx->getService('smarty', 'smarty.modSmarty');
         foreach ($data as $key => $value) {
             $this->modx->smarty->assign($key, $value);
         }
 
-        return $this->modx->smarty->fetch(dirname(__DIR__) . '/dashboard/shortcuts.tpl');
+        return $this->modx->smarty->fetch($this->modxdashboardwidgetpack->config['core_path'] . '/elements/dashboard/shortcuts.tpl');
     }
 
     /**
@@ -95,4 +104,4 @@ class ModxDashboardWidgetPackWidgetShortcuts extends modDashboardWidgetInterface
     }
 }
 
-return 'ModxDashboardWidgetPackWidgetShortcuts';
+return '\\Sterc\\MODXDashboardWidgetPack\Widgets\\Shortcuts';

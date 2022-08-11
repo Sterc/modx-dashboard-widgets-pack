@@ -1,5 +1,9 @@
 Changelog for MODXDashboardWidgetPack.
 
+MODXDashboardWidgetPack 2.0.2
+==============
+- MODX3 Refactor
+
 MODXDashboardWidgetPack 2.0.1
 ==============
 - Welcome widget css fix

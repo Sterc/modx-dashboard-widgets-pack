@@ -1,5 +1,5 @@
 # MODXDashboardWidgetPack #
-![MODXDashboardWidgetPack](https://img.shields.io/badge/version-2.0.1-brightgreen.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/extra%20by-sterc-ff69b4.svg)
+![MODXDashboardWidgetPack](https://img.shields.io/badge/version-2.0.2-brightgreen.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/extra%20by-sterc-ff69b4.svg)
 
 This extra provides additional dashboard widgets for you to use in your MODX Dashboard to improve the MODX user experience.
 

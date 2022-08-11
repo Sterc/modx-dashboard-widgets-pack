@@ -1,4 +1,7 @@
 <?php
+namespace Sterc\MODXDashboardWidgetPack;
+
+use MODX\Revolution\modX;
 
 /**
  * Class MODXDashboardWidgetPack.
@@ -44,28 +47,13 @@ class MODXDashboardWidgetPack
         $this->modx      =& $modx;
         $this->namespace = $this->modx->getOption('namespace', $config, 'modxdashboardwidgetpack');
 
-        $corePath = $this->modx->getOption(
-            'modxdashboardwidgetpack.core_path',
-            $config,
-            $this->modx->getOption('core_path') . 'components/modxdashboardwidgetpack/'
-        );
-
-        $assetsUrl = $this->modx->getOption(
-            'modxdashboardwidgetpack.assets_url',
-            $config,
-            $this->modx->getOption('assets_url') . 'components/modxdashboardwidgetpack/'
-        );
-
-        $assetsPath = $this->modx->getOption(
-            'modxdashboardwidgetpack.assets_path',
-            $config,
-            $this->modx->getOption('assets_path') . 'components/modxdashboardwidgetpack/'
-        );
+        $corePath   = $this->modx->getOption('modxdashboardwidgetpack.core_path', $config, $this->modx->getOption('core_path') . 'components/modxdashboardwidgetpack/');
+        $assetsUrl  = $this->modx->getOption('modxdashboardwidgetpack.assets_url', $config, $this->modx->getOption('assets_url') . 'components/modxdashboardwidgetpack/');
+        $assetsPath = $this->modx->getOption('modxdashboardwidgetpack.assets_path', $config, $this->modx->getOption('assets_path') . 'components/modxdashboardwidgetpack/');
 
         $this->config = array_merge([
             'namespace'       => $this->namespace,
             'core_path'       => $corePath,
-            'model_path'      => $corePath . 'model/',
             'chunks_path'     => $corePath . 'elements/chunks/',
             'snippets_path'   => $corePath . 'elements/snippets/',
             'templates_path'  => $corePath . 'templates/',
@@ -79,7 +67,5 @@ class MODXDashboardWidgetPack
         ], $config);
 
         $this->modx->lexicon->load('modxdashboardwidgetpack:default');
-
-        $this->modx->addPackage('modxdashboardwidgetpack', $this->config['model_path']);
     }
 }

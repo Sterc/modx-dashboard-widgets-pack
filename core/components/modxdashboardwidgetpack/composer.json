@@ -1,0 +1,13 @@
+{
+    "name": "sterc/modxdashoardwidgetpack",
+    "description": "This extra provides additional dashboard widgets for you to use in your MODX Dashboard to improve the MODX user experience.",
+    "keywords": [
+      "modx",
+      "MODXDashboardWidgetPack"
+    ],
+    "autoload": {
+      "psr-4": {
+        "Sterc\\MODXDashboardWidgetPack\\": "src/"
+      }
+    }
+  }

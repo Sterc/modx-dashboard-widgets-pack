@@ -1,14 +1,22 @@
 <?php
+namespace Sterc\MODXDashboardWidgetPack\Widgets;
 
 use  MODX\Revolution\modDashboardWidgetInterface;
 use  MODX\Revolution\modDashboardWidget;
+use MODX\Revolution\modManagerController;
+use Sterc\MODXDashboardWidgetPack\MODXDashboardWidgetPack;
 
 /**
  * @package modx
  * @subpackage dashboard
  */
-class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
+class Welcome extends modDashboardWidgetInterface
 {
+    /**
+     * @var MODXDashboardWidgetPack
+     */
+    protected $modxdashboardwidgetpack;
+    
     /**
      * ModxDashboardWidgetPackWidgetWelcome constructor.
      * @param \xPDO\xPDO $modx
@@ -19,15 +27,7 @@ class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
     {
         parent::__construct($modx, $widget, $controller);
 
-        $this->modx->modxdashboardwidgetpack = $this->modx->getService(
-            'modxdashboardwidgetpack',
-            'MODXDashboardWidgetPack',
-            $this->modx->getOption(
-                'modxdashboardwidgetpack.core_path',
-                null,
-                $this->modx->getOption('core_path') . 'components/modxdashboardwidgetpack/'
-            ) . 'model/modxdashboardwidgetpack/'
-        );
+        $this->modxdashboardwidgetpack = new MODXDashboardWidgetPack($this->modx);
     }
 
     /**
@@ -45,14 +45,13 @@ class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
             ])
         ];
 
-        $this->modx->getService('smarty', 'smarty.modSmarty');
         foreach ($data as $key => $value) {
             $this->modx->smarty->assign($key, $value);
         }
 
-        $this->controller->addCss(rtrim($this->modx->modxdashboardwidgetpack->config['assets_url'], '/') . '/css/style.css');
+        $this->controller->addCss(rtrim($this->modxdashboardwidgetpack->config['assets_url'], '/') . '/css/style.css');
 
-        return $this->modx->smarty->fetch(dirname(__DIR__) . '/dashboard/welcome.tpl');
+        return $this->modx->smarty->fetch($this->modxdashboardwidgetpack->config['core_path'] . '/elements/dashboard/welcome.tpl');
     }
 
     /**
@@ -72,7 +71,7 @@ class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
      */
     protected function getBackgroundImage()
     {
-        $image = rtrim($this->modx->modxdashboardwidgetpack->config['assets_url'], '/') . '/img/default-welcome-widget-bg.jpg';
+        $image = rtrim($this->modxdashboardwidgetpack->config['assets_url'], '/') . '/img/default-welcome-widget-bg.jpg';
 
         $properties = $this->widget->get('properties');
         if (isset($properties['background_image_path']) && !empty($properties['background_image_path'])) {
@@ -118,4 +117,4 @@ class ModxDashboardWidgetPackWidgetWelcome extends modDashboardWidgetInterface
     }
 }
 
-return 'ModxDashboardWidgetPackWidgetWelcome';
+return '\\Sterc\\MODXDashboardWidgetPack\Widgets\\Welcome';
